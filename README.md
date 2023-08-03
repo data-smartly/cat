@@ -1,5 +1,5 @@
 # CAT
-**CAT** is framework for creating automated tests for your data. It is really easy you can create your first test in just 5 minutes. For more info about how to get started with CAT visit our [**documentation**](https://docs.justcat.it/). In this repository you can find many examples how to use CAT. These examples are created for our fictional [**Aero database**](https://github.com/datasmartly/aero), which you can download on the link, or you can edit tests for your own database. 
+**CAT** is framework for creating automated tests for your data. It is really easy you can create your first test in just 5 minutes. 
 
 ## How to install CAT
 It will take you a minute.
