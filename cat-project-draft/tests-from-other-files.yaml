@@ -1,0 +1,49 @@
+Data Sources:
+- Provider: SqlServer@1 
+  Connection string: data source=your_aero_server;integrated security=true;initial catalog=aero, id=username, password=password;
+  Name: AERO
+
+Get list of tests from:
+- Provider: Yaml@1
+  Name: SourceDataTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/SourceDataTests.yaml # relative paths are resolved against directory 
+  Query: /SourceDataTests
+
+- Provider: Yaml@1
+  Name: StageDataTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/StageDataTests.yaml # relative paths are resolved against directory 
+  Query: /StageDataTests
+
+- Provider: Yaml@1
+  Name: ComparisonTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/ComparisonTests.yaml # relative paths are resolved against directory 
+  Query: /ComparisonTests
+
+- Provider: Yaml@1
+  Name: MetadataTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/MetadataTests.yaml # relative paths are resolved against directory 
+  Query: /MetadataTests
+
+- Provider: Yaml@1
+  Name: BusinessTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/BusinessTests.yaml # relative paths are resolved against directory 
+  Query: /BusinessTests
+
+- Provider: Excel@1
+  Name: ExcelSampleTest # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions/ExcelSampleTest.xlsx # relative paths are resolved against directory 
+  Query: SELECT * FROM [Tests] WHERE [TestName] = 'DeparturesEmptyCheck'
+
+Named sets:
+- Name: all gates
+  Data source: AERO_PROD
+  Query: |
+    SELECT  GATE_ID, GATE_NO 
+    FROM    DIM.GATES
+- Name: staging tables
+  Data source: AERO_PROD
+  Query: |
+    SELECT  * 
+    FROM  INFORMATION_SCHEMA.TABLES as t 
+    WHERE TABLE_SCHEMA = N'STAGE'
+Output: trx

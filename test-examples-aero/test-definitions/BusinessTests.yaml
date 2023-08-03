@@ -80,7 +80,7 @@ BusinessTests:
 - Name: Plane capacity check on table STAGE.DEPARTURES.
   Test Suite: BusinessTests
   Order: 7
-  Description: Plane cannot be overbooked i.e. there cannot be more passangers on the departing flight than there is seats on a plane.
+  Description: Plane cannot be overbooked i.e. there cannot be more passengers on the departing flight than there is seats on a plane.
   Data Source: AERO_PROD
   Query: |
     SELECT D.*
