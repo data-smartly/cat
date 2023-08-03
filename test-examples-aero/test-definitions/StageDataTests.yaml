@@ -1,0 +1,63 @@
+StageDataTests:
+- Name: Check if the table STAGE.AIRLINES is not empty. 
+  Test Suite: StageDataTests
+  Order: 0
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.AIRLINES
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.DATES is not empty. 
+  Test Suite: StageDataTests
+  Order: 1
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.DATES
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.DESTINATIONS is not empty. 
+  Test Suite: StageDataTests
+  Order: 2
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.DESTINATIONS
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.GATES is not empty. 
+  Test Suite: StageDataTests
+  Order: 3
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.GATES
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.LUGGAGE_TYPE is not empty.
+  Test Suite: StageDataTests 
+  Order: 4
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.LUGGAGE_TYPE
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.PLANES is not empty. 
+  Test Suite: StageDataTests
+  Order: 5
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.PLANES
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.TICKET_TYPE is not empty. 
+  Test Suite: StageDataTests
+  Order: 6
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.TICKET_TYPE
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.DEPARTURES is not empty. 
+  Test Suite: StageDataTests
+  Order: 7
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.DEPARTURES
+  Expectation: set is not empty
+
+- Name: Check if the table STAGE.PASSENGERS is not empty.
+  Test Suite: StageDataTests 
+  Order: 8
+  Data Source: AERO_PROD
+  Query: SELECT * FROM STAGE.PASSENGERS
+  Expectation: set is not empty

@@ -1,0 +1,102 @@
+MetadataTests:
+- Name: Metadata check on table STAGE.DEPARTURES
+  Test Suite: MetadataTests 
+  Order: 1
+  Description: Column SYS_INSERTED_DT must not be null on table STAGE.DEPARTURES.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.DEPARTURES
+    WHERE 1=1
+      AND SYS_INSERTED_DT IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.PASSENGERS
+  Test Suite: MetadataTests 
+  Order: 2
+  Description: Column SYS_INSERTED_DT must not be null on table STAGE.PASSENGERS.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS
+    WHERE 1=1
+      AND SYS_INSERTED_DT IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.PASSENGERS 
+  Test Suite: MetadataTests
+  Order: 3
+  Description: Column SYS_INSERTED_DT must not be null on table STAGE.PASSENGERS.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM FACT.PASSENGERS
+    WHERE 1=1
+      AND SYS_INSERTED_DT IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.DEPARTURES 
+  Test Suite: MetadataTests
+  Order: 4
+  Description: Column SYS_INSERTED_DT must not be null on table STAGE.DEPARTURES.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM FACT.DEPARTURES
+    WHERE 1=1
+      AND SYS_INSERTED_DT IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.DEPARTURES
+  Test Suite: MetadataTests 
+  Order: 5
+  Description: Column FLIGHT_NUMBER must not be null on table STAGE.DEPARTURES.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.DEPARTURES D
+    WHERE 1=1
+       AND D.FLIGHT_NUMBER IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.PASSENGERS 
+  Test Suite: MetadataTests
+  Order: 6
+  Description: Column ID must not be null on table STAGE.PASSENGERS.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+       AND P.ID IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Metadata check on table STAGE.PASSENGERS 
+  Test Suite: MetadataTests
+  Order: 7
+  Description: Column FLIGHT_NUMBER must not be null on table STAGE.PASSENGERS.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+       AND P.FLIGHT_NUMBER IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Table STAGE.DEPARTURES has SYS_INSERTED_DT column
+  Test Suite: MetadataTests
+  # Metadata: staging tables
+  Data Source: AERO_PROD
+  Query: |
+    SELECT	* 
+    FROM	INFORMATION_SCHEMA.COLUMNS as c 
+    WHERE	TABLE_SCHEMA = N'STAGE' and TABLE_NAME = N'DEPARTURES'
+      		AND COLUMN_NAME = N'SYS_INSERTED_DT'
+  Expectation: set is not empty

@@ -1,0 +1,63 @@
+SourceDataTests:
+- Name: Check if the table DIM.AIRLINES is not empty. 
+  Test Suite: SourceDataTests
+  Order: 0
+  Data Source: AERO_PROD
+  Query: SELECT *  FROM DIM.AIRLINES
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.DATES is not empty.
+  Test Suite: SourceDataTests 
+  Order: 1
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.DATES
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.DESTINATIONS is not empty.
+  Test Suite: SourceDataTests 
+  Order: 2
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.DESTINATIONS
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.GATES is not empty.
+  Test Suite: SourceDataTests 
+  Order: 3
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.GATES
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.LUGGAGE_TYPE is not empty. 
+  Test Suite: SourceDataTests
+  Order: 4
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.LUGGAGE_TYPE
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.PLANES is not empty. 
+  Test Suite: SourceDataTests
+  Order: 5
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.PLANES
+  Expectation: set is not empty
+
+- Name: Check if the table DIM.TICKET_TYPE is not empty. 
+  Test Suite: SourceDataTests
+  Order: 6
+  Data Source: AERO_PROD
+  Query: SELECT * FROM DIM.TICKET_TYPE
+  Expectation: set is not empty
+
+- Name: Check if the table FACT.DEPARTURES is not empty. 
+  Test Suite: SourceDataTests
+  Order: 7
+  Data Source: AERO_PROD
+  Query: SELECT * FROM FACT.DEPARTURES
+  Expectation: set is not empty
+
+- Name: Check if the table FACT.PASSENGERS is not empty. 
+  Test Suite: SourceDataTests
+  Order: 8
+  Data Source: AERO_PROD
+  Query: SELECT * FROM FACT.PASSENGERS
+  Expectation: set is not empty

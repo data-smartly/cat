@@ -1,0 +1,121 @@
+BusinessTests:
+- Name: First name check on table STAGE.PASSENGERS 
+  Test Suite: BusinessTests
+  Order: 1
+  Description: In the column FIRST_NAME, all names must start with capital letter. 
+  Data Source: AERO_PROD
+  Query: |
+    SELECT FIRST_NAME
+    FROM STAGE.PASSENGERS
+    WHERE 1=1
+      AND ASCII(SUBSTRING(FIRST_NAME, 1, 1)) NOT BETWEEN 65 AND 90
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Last name check on table STAGE.PASSENGERS
+  Test Suite: BusinessTests 
+  Order: 2
+  Description: In the column LAST_NAME, all names must start with capital letter. 
+  Data Source: AERO_PROD
+  Query: |
+    SELECT LAST_NAME
+    FROM STAGE.PASSENGERS
+    WHERE 1=1
+      AND ASCII(SUBSTRING(LAST_NAME, 1, 1)) NOT BETWEEN 65 AND 90
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Age check on table STAGE.PASSENGERS for newborns.
+  Test Suite: BusinessTests
+  Order: 3
+  Description: In the column AGE, there cannot be entries for newborn babies (youger than 6 months). 
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+      AND P.AGE < 1
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Age check on table STAGE.PASSENGERS for elders.
+  Test Suite: BusinessTests
+  Order: 4
+  Description: In the column AGE, there cannot be entries for people older than 90 years. 
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+      AND P.AGE > 90
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Low price check on table STAGE.PASSENGERS.
+  Test Suite: BusinessTests
+  Order: 5
+  Description: Price of the ticket cannot be lower than 500 CZK.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+      AND P.TICKET_PRICE < 500
+  Expectation: set is empty
+  Maximum error count: 10
+
+- Name: High price check on table STAGE.PASSENGERS.
+  Test Suite: BusinessTests
+  Order: 6
+  Description: Price of the ticket cannot be higher than 50 000 CZK.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT * 
+    FROM STAGE.PASSENGERS P
+    WHERE 1=1
+      AND P.TICKET_PRICE > 50000
+  Expectation: set is empty
+  Maximum error count: 10
+
+- Name: Plane capacity check on table STAGE.DEPARTURES.
+  Test Suite: BusinessTests
+  Order: 7
+  Description: Plane cannot be overbooked i.e. there cannot be more passangers on the departing flight than there is seats on a plane.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT D.*
+    FROM STAGE.DEPARTURES D
+    JOIN STAGE.PLANES P
+      ON P.PLANE_ID = D.PLANE_ID
+    WHERE 1=1
+      AND P.PLANE_CAPACITY < D.PASSENGERS
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Destination check on table STAGE.DEPARTURES.
+  Test Suite: BusinessTests
+  Order: 8
+  Description: Table departure cannot contain records of non-existing destinations.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT D.FLIGHT_NUMBER
+    FROM STAGE.DEPARTURES D
+    LEFT JOIN STAGE.DESTINATIONS D2
+      ON D2.DESTINATION_ID = D.DESTINATION_ID
+    WHERE 1=1
+      AND D2.DESTINATION_ID IS NULL
+  Expectation: set rowcount
+  ExpectedRowCount:  0
+
+- Name: Actual flights for gate 1 are loaded
+  Test Suite: BusinessTests
+  Description: Flights in FACT.DEPARTURES table for gate 1 are loaded.
+  Data Source: AERO_PROD
+  Query: |
+    SELECT	* 
+    FROM	FACT.DEPARTURES AS d 
+    WHERE	d.DATE_OF_FLIGHT BETWEEN GETDATE() AND DATEADD(DAY, 14, d.DATE_OF_FLIGHT)
+        AND d.GATE_ID = '60DC8346-B39C-40C8-9426-BB03D1D426A1s'
+  Expectation: set is not empty
+  Metadata: all gates
+

@@ -1,0 +1,50 @@
+ComparisonTests:
+
+- Name: Data check between stages on table DEPARTURES.
+  Test Suite: ComparisonTests
+  Order: 0
+  Description: Count of rows between stages on table DEPARTURES should be equal.
+  First Data Source: AERO_PROD
+  First Query: |
+    SELECT COUNT(*) 
+    FROM FACT.DEPARTURES
+  Second Data Source: AERO_PROD
+  Second Query: |
+    SELECT COUNT(*) 
+    FROM STAGE.DEPARTURES
+  Expectation: SetsMatch
+
+# try to add a test
+# name for the test:        Compare fact passangers with fact depatures
+# description for the test: Count of rows between stages on table DEPARTURES should be equal.
+# queries to compare:
+#    SELECT SUM(PASSENGERS) FROM [FACT].[DEPARTURES] 
+#    SELECT COUNT(*) FROM FACT.PASSENGERS 
+  
+
+- Name: Data check between stages on table PASSENGERS.
+  Test Suite: ComparisonTests
+  Order: 1
+  Description: Count of rows between stages on table PASSENGERS should be equal.
+  First Data Source: AERO_PROD
+  First Query: |
+    SELECT COUNT(*) 
+    FROM FACT.PASSENGERS
+  Second Data Source: AERO_PROD
+  Second Query: |
+    SELECT COUNT(*) 
+    FROM STAGE.PASSENGERS
+  Expectation: SetsMatch
+
+- Name: Check passangers vs departure table for flight 'XXX220250' # %FLIGHT_NUMBER%
+  # Metadata: flight numbers
+  Test Suite: ComparisonTests
+  Order: 0
+  Description: Count of rows between stages on table DEPARTURES should be equal.
+  First Data Source: AERO_PROD
+  First Query: |
+    select passengers from fact.departures where flight_number = 'XXX220250'
+  Second Data Source: AERO_PROD
+  Second Query: |
+    select count(*) from fact.passengers where flight_number = 'XXX220250'
+  Expectation: SetsMatch
