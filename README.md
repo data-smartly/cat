@@ -4,7 +4,7 @@
 ## How to install CAT
 It will take you a minute.
 
-Depending whether you have or have not PowerShell 7, the installation will take you minute or a few minutes. If you don’t have PowerShell 7 or you are not sure, go to Prerequisites. Otherwise it is as easy as that:
+Depending whether you have or have not PowerShell 7, the installation will take you minute or a few minutes. If you don’t have PowerShell 7 or you are not sure, go to [**CAT prerequisities**](https://docs.justcat.it/docs/help/installation/prerequisites/). Otherwise it is as easy as that:
 
 Open PowerShell 7 and run this command:
 
