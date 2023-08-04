@@ -6,17 +6,17 @@ Data Sources:
 Get list of tests from:
 - Provider: Csv@1
   Name: CsvTests # list of tests have optional name, useful for troubleshooting
-  Connection string: ./test-definitions/SourceDataTests.yaml # relative paths are resolved against directory 
+  Connection string: ./test-definitions-drafts/csv-definitions.csv # relative paths are resolved against directory 
   Query: /SourceDataTests
 
 - Provider: Excel@1
   Name: ExcelTests # list of tests have optional name, useful for troubleshooting
-  Connection string: ./test-definitions/StageDataTests.yaml # relative paths are resolved against directory 
+  Connection string: ./test-definitions-drafts/excel-definitions.xlsx # relative paths are resolved against directory 
   Query: /StageDataTests
 
 - Provider: Yaml@1
-  Name: MetadataTests # list of tests have optional name, useful for troubleshooting
-  Connection string: ./test-definitions/MetadataTests.yaml # relative paths are resolved against directory 
+  Name: YamlTests # list of tests have optional name, useful for troubleshooting
+  Connection string: ./test-definitions-drafts/yaml-definitions.yaml # relative paths are resolved against directory 
   Query: /MetadataTests
 
 

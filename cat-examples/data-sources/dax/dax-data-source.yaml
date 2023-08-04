@@ -1,0 +1,4 @@
+Data Sources:
+- Provider: Dax@1 
+  Connection string: Provider=MSOLAP;data source=localhost;integrated security=SSPI;Catalog=WideWorldImporters
+  Name: MyTabularModel

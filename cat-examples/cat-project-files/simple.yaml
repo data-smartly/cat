@@ -1,7 +1,7 @@
 Data Sources:
 - Provider: SqlServer@1 
-  Connection string: data source=your_aero_server;integrated security=true;initial catalog=aero, id=username, password=password;
-  Name: AERO
+  Connection string: data source=server;integrated security=true;initial catalog=DWH, id=username, password=password;
+  Name: DWH
 
 Tests:
 - Name: Check if the table DIM.AIRLINES is not empty. 
