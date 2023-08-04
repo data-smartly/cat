@@ -1,0 +1,14 @@
+Data Sources:
+- Provider: SqlServer@1 
+  Connection string: data source=your_aero_server;integrated security=true;initial catalog=aero, id=username, password=password;
+  Name: AERO
+
+  
+Tests:
+- Name: Check if the table DIM.AIRLINES is not empty. 
+  Test Suite: SourceDataTests
+  Order: 0
+  Data Source: AERO_PROD
+  Query: SELECT *  FROM DIM.AIRLINES
+  Expectation: set is not empty
+

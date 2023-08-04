@@ -1,3 +1,4 @@
+
 CREATE TABLE test_definitions (
     Name VARCHAR2(50),
     Description VARCHAR2(100),

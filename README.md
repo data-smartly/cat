@@ -13,3 +13,6 @@ Open PowerShell 7 and run this command:
 That's it. You have CAT.
 
 For more info about how to write your first tests, which providers you can use or what are your output options visit our [**CAT documentation**](https://docs.justcat.it/). In this repository you can find many examples how to use CAT. These examples are created for our fictional [**Aero database**](https://github.com/datasmartly/aero), which you can download on the link, or you can edit tests for your own database. 
+
+* If you want example files for your own data: [**cat-functions-examples**](cat-functions-examples)
+* For complex test project on our aero database go to: [**complex-aero-project**](complex-aero-project)
