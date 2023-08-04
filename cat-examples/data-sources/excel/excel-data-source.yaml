@@ -1,0 +1,4 @@
+Data Sources:
+- Provider: Excel@1 
+  Connection string: ./MyData.xlsx # file in this directory (where the project file is)
+  Name: MyExcelData

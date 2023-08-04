@@ -1,0 +1,5 @@
+Data Sources:
+- Name: DepartmentData
+  Provider: Yaml@1
+  Connection string: ./DepartmentData.yaml
+

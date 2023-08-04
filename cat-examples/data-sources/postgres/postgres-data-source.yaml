@@ -1,0 +1,4 @@
+Data sources:
+- Name: MyPostgresDatabase
+  Provider: Postgres@1
+  Connection string: Host=localhost;port=5432;dbname=my_database;connect_timeout=10;User ID=my_user;Password=%SECRET_PASSWORD%;
