@@ -22,12 +22,12 @@ Get list of tests from:
 
 Named sets:
 - Name: all gates
-  Data source: AERO_PROD
+  Data source: AERO
   Query: |
     SELECT  GATE_ID, GATE_NO 
     FROM    DIM.GATES
 - Name: staging tables
-  Data source: AERO_PROD
+  Data source: AERO
   Query: |
     SELECT  * 
     FROM  INFORMATION_SCHEMA.TABLES as t 
