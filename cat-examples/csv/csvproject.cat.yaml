@@ -1,0 +1,12 @@
+Data Sources:
+- Provider: Csv@1
+  Connection String: C:\Users\JakubVala\UsefulScripts
+  Name: AERO
+
+
+
+Get list of tests from:
+- Provider: Csv@1
+  Name: CsvTests # list of tests have optional name, useful for troubleshooting
+  Connection string: C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv # relative paths are resolved against directory 
+  Query: SELECT * FROM csv-definitions1.csv

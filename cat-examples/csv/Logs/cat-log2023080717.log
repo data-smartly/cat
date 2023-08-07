@@ -1,0 +1,41 @@
+2023-08-07 17:37:09.593 +02:00 [INF] Logging is turned ON. Writing logs with level "Information" to console and to files: C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv\Logs\cat-log.log
+2023-08-07 17:37:10.363 +02:00 [INF] Edition of CAT: "Unregistered"
+2023-08-07 17:37:10.365 +02:00 [INF] Register here to raise the limit of tests you can execute in a single run: https://portal.justcat.it/#/register
+2023-08-07 17:37:10.811 +02:00 [INF] CAT session created, SessionGuid: "7dfd1808-b36e-453e-8be8-d14c35bb22d1"
+2023-08-07 17:37:10.815 +02:00 [INF] ====================================================================================================
+2023-08-07 17:37:10.816 +02:00 [INF] Opening a CAT project: C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv\csvproject.cat.yaml
+2023-08-07 17:37:10.821 +02:00 [INF] Opening project, projectFilePath: C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv\csvproject.cat.yaml, loadDataSources: true, loadTests: true, loggingLevel: Information, loggingPath:  C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv\Logs\cat-log.log
+2023-08-07 17:37:10.911 +02:00 [INF] Working directory set to: C:\Users\JakubVala\source\repos\github-cat\cat-examples\csv
+2023-08-07 17:37:10.926 +02:00 [INF] Loaded 1 data source(s) from data source list # 1: CAT project file (Yaml@1) 
+2023-08-07 17:37:10.929 +02:00 [INF] Loaded data sources names: 'AERO'
+2023-08-07 17:37:10.979 +02:00 [INF] Loaded 2 test(s) from test list # 1: CsvTests (Csv@1) 
+2023-08-07 17:37:10.985 +02:00 [INF] Starting execution of tests.
+2023-08-07 17:37:11.004 +02:00 [INF] [t1] - execution finished with result "Passed", duration "00:00:00.0137689".
+2023-08-07 17:37:11.016 +02:00 [ERR] [t2] - details: 
+No row was expected but at least one row exists.
+
+┌────────────┬──────────────┬─────────────────┬──────────────┬───────────────────┐
+│AIRLINE_ID  │AIRLINE_NAME  │AIRLINE_ACRONYM  │AIRLINE_TYPE  │COUNTRY_OF_ORIGIN  │
+╞════════════╪══════════════╪═════════════════╪══════════════╪═══════════════════╡
+│1           │Lufthansa     │LH               │Full-Service  │Germany            │
+└────────────┴──────────────┴─────────────────┴──────────────┴───────────────────┘
+
+
+Description: test2
+First Data Source: AERO
+First Query:
+
+    SELECT * FROM mydata.csv
+
+
+2023-08-07 17:37:11.018 +02:00 [INF] [t2] - execution finished with result "Failed", duration "00:00:00.0083415".
+2023-08-07 17:37:11.020 +02:00 [INF] Summary: 
+┌────────┬────────┬───────┬──────────────┬───────┐
+│Passed  │Failed  │Error  │Inconclusive  │Total  │
+╞════════╪════════╪═══════╪══════════════╪═══════╡
+│1       │1       │0      │0             │2      │
+└────────┴────────┴───────┴──────────────┴───────┘
+
+
+2023-08-07 17:37:11.022 +02:00 [INF] Generating 0 outputs.
+2023-08-07 17:37:11.025 +02:00 [INF] Output generation finished.

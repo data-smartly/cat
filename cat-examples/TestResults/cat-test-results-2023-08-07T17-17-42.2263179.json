@@ -1,0 +1,61 @@
+﻿{
+  "startedOn": "2023-08-07T17:17:42.1532539+02:00",
+  "finishedOn": "2023-08-07T17:17:42.1624193+02:00",
+  "duration": "00:00:00.0091654",
+  "results": [
+    {
+      "executionGuid": "32a29200-9e86-40f4-b3a5-ca87611049fd",
+      "testResult": "Error",
+      "message": null,
+      "startTime": "2023-08-07T17:17:42.1533227+02:00",
+      "endTime": "2023-08-07T17:17:42.1602487+02:00",
+      "duration": "00:00:00.0069260",
+      "exceptionMessage": "Keyword not supported: \u0027id\u0027.",
+      "testDefinition": {
+        "testListID": "3f3d9798-0c01-48b7-a8eb-fa5f24ce4553",
+        "testDefinitionGuid": "60d4fc62-0d8e-454d-a73e-0e1864af56f0",
+        "suite": "SourceDataTests",
+        "order": 0,
+        "testCase": null,
+        "name": "Check if the table DIM.AIRLINES is not empty.",
+        "testFullName": "[SourceDataTests].[0].[Check if the table DIM.AIRLINES is not empty.]",
+        "descripiton": null,
+        "firstDataSource": "AERO",
+        "firstQuery": "SELECT *  FROM DIM.AIRLINES",
+        "secondDataSource": null,
+        "secondQuery": null,
+        "expectation": "set is not empty",
+        "timeout": 0,
+        "metadata": null,
+        "settings": {
+          "Name": "Check if the table DIM.AIRLINES is not empty.",
+          "Test Suite": "SourceDataTests",
+          "Order": "0",
+          "Data Source": "AERO",
+          "Query": "SELECT *  FROM DIM.AIRLINES",
+          "Expectation": "set is not empty"
+        }
+      },
+      "testDefinitionGuid": "60d4fc62-0d8e-454d-a73e-0e1864af56f0",
+      "testName": "Check if the table DIM.AIRLINES is not empty.",
+      "testFullName": "[SourceDataTests].[0].[Check if the table DIM.AIRLINES is not empty.]",
+      "testSuite": "SourceDataTests",
+      "testCase": null,
+      "description": null,
+      "firstDataSource": "AERO",
+      "firstQuery": "SELECT *  FROM DIM.AIRLINES",
+      "secondDataSource": null,
+      "secondQuery": null,
+      "expectation": "set is not empty"
+    }
+  ],
+  "passedCount": 0,
+  "failedCount": 0,
+  "errorCount": 1,
+  "notYetExecutedCount": 0,
+  "inconclusiveCount": 0,
+  "warningCount": 0,
+  "skippedCount": 0,
+  "unknownCount": 0,
+  "totalCount": 1
+}

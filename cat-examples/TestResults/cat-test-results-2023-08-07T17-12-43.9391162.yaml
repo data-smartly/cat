@@ -1,0 +1,54 @@
+﻿startedOn: 2023-08-07T17:12:43.4730527+02:00
+finishedOn: 2023-08-07T17:12:43.8944699+02:00
+duration: 00:00:00.4214172
+results:
+- executionGuid: 8f2bfd0e-4cca-450d-a26f-b1b3d353620d
+  testResult: Error
+  message: 
+  startTime: 2023-08-07T17:12:43.4731408+02:00
+  endTime: 2023-08-07T17:12:43.8918372+02:00
+  duration: 00:00:00.4186964
+  exceptionMessage: Login failed for user ''.
+  testDefinition:
+    testListID: 17820c7c-4450-4e4a-8865-53a99deb3a34
+    testDefinitionGuid: 4bfacf78-4a45-49df-8ae7-580eb95d0628
+    suite: SourceDataTests
+    order: 0
+    testCase: 
+    name: Check if the table DIM.AIRLINES is not empty.
+    testFullName: '[SourceDataTests].[0].[Check if the table DIM.AIRLINES is not empty.]'
+    descripiton: 
+    firstDataSource: AERO
+    firstQuery: SELECT *  FROM DIM.AIRLINES
+    secondDataSource: 
+    secondQuery: 
+    expectation: set is not empty
+    timeout: 0
+    metadata: 
+    settings:
+      Name: Check if the table DIM.AIRLINES is not empty.
+      Test Suite: SourceDataTests
+      Order: 0
+      Data Source: AERO
+      Query: SELECT *  FROM DIM.AIRLINES
+      Expectation: set is not empty
+  testDefinitionGuid: 4bfacf78-4a45-49df-8ae7-580eb95d0628
+  testName: Check if the table DIM.AIRLINES is not empty.
+  testFullName: '[SourceDataTests].[0].[Check if the table DIM.AIRLINES is not empty.]'
+  testSuite: SourceDataTests
+  testCase: 
+  description: 
+  firstDataSource: AERO
+  firstQuery: SELECT *  FROM DIM.AIRLINES
+  secondDataSource: 
+  secondQuery: 
+  expectation: set is not empty
+passedCount: 0
+failedCount: 0
+errorCount: 1
+notYetExecutedCount: 0
+inconclusiveCount: 0
+warningCount: 0
+skippedCount: 0
+unknownCount: 0
+totalCount: 1

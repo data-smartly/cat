@@ -1,6 +1,6 @@
 Data Sources:
 - Provider: SqlServer@1 
-  Connection string: data source=server;integrated security=true;initial catalog=aero, id=username, password=password;
+  Connection string: data source=cat-demo-aero.database.windows.net;initial catalog=aero; user=sqladminuser; password=ThisIsOneGoodDemo8!;
   Name: AERO
 
 Tests:
