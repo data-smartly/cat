@@ -1,6 +1,6 @@
 ﻿Data Sources:
 - Provider: SqlServer@1 
-  Connection string: data source=your_aero_server;integrated security=true;initial catalog=aero, id=username, password=password;
+  Connection string: data source=your_aero_server;integrated security=true;initial catalog=aero, login=username, password=password;
   Name: AERO
 
 Get list of tests from:
@@ -36,12 +36,12 @@ Get list of tests from:
 
 Named sets:
 - Name: all gates
-  Data source: AERO_PROD
+  Data source: AERO
   Query: |
     SELECT  GATE_ID, GATE_NO 
     FROM    DIM.GATES
 - Name: staging tables
-  Data source: AERO_PROD
+  Data source: AERO
   Query: |
     SELECT  * 
     FROM  INFORMATION_SCHEMA.TABLES as t 
