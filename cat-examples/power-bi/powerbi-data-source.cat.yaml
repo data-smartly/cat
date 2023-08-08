@@ -2,9 +2,14 @@ Data sources:
 - Name: finance model
   Provider: PowerBI@1
   Connection string: Finance
-
 Tests:
-- Name: Check if the table MyTable is not empty. 
-  Data Source: MyOracleDatabase
-  Query: SELECT * FROM MyTable
-  Expectation: set is not empty
+- Name: Check all states are loaded
+  First Data Source: finance model 
+  First Query: |
+    EVALUATE(
+    	VALUES('Customer'[State])
+    ) 
+    ORDER BY 'Customer'[State] 
+  Second data source: accounting # let's say you want to compare with a source system 
+  Second Query: SELECT [StateName] FROM dbo.States ORDER BY [StateName]
+  Expectation: sets match
