@@ -2,3 +2,9 @@ Data sources:
 - Name: finance model
   Provider: PowerBI@1
   Connection string: Finance
+
+Tests:
+- Name: Check if the table MyTable is not empty. 
+  Data Source: MyOracleDatabase
+  Query: SELECT * FROM MyTable
+  Expectation: set is not empty
