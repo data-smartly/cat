@@ -2,3 +2,10 @@ Data sources:
 - Name: DWH
   Provider: SqlServer@1
   Connection string: data source=localhost;integrated security=SSPI;initial catalog=DWH
+
+
+Tests:
+- Name: Check if the table MyTable is not empty. 
+  Data Source: DWH
+  Query: SELECT * FROM MyTable
+  Expectation: set is not empty

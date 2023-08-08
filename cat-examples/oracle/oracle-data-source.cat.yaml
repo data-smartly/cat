@@ -7,3 +7,9 @@ Data sources:
       ) 
       (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = DWHDemo)));
       User Id=User123;Password=%MyEnvironmentVariable%;Persist Security Info=True;
+
+Tests:
+- Name: Check if the table MyTable is not empty. 
+  Data Source: MyOracleDatabase
+  Query: SELECT * FROM MyTable
+  Expectation: set is not empty

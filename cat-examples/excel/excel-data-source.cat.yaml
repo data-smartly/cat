@@ -2,3 +2,9 @@ Data Sources:
 - Provider: Excel@1 
   Connection string: ./MyData.xlsx # file in this directory (where the project file is)
   Name: MyExcelData
+
+Tests:
+- Provider: Excel@1
+  Name: ExcelSampleTest # list of tests have optional name, useful for troubleshooting
+  Connection string: excel-definitions.xlsx # relative paths are resolved against directory 
+  Query: SELECT * FROM [Tests] 
