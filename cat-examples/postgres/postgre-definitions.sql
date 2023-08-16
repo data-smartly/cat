@@ -9,5 +9,5 @@ CREATE TABLE test_definitions (
 );
 
 INSERT INTO test_definitions (Name, Description, FirstDataSource, FirstQuery, SecondDataSource, SecondQuery, Expectation)
-VALUES ('t10', 'test10', 'DWH', 'SELECT * FROM DIM.AIRLINES', 'DWH', 'SELECT * FROM STAGE.AIRLINES', 'SetsMatch');
+VALUES ('t10', 'test10', 'MyPostgresDatabase', 'SELECT * FROM DIM.AIRLINES', 'MyPostgresDatabase', 'SELECT * FROM STAGE.AIRLINES', 'SetsMatch');
 

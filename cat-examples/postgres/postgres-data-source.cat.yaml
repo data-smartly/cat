@@ -8,3 +8,8 @@ Data sources:
   Data Source: MyPostgresDatabase
   Query: SELECT * FROM MyTable
   Expectation: set is not empty
+
+Get list of tests from:
+-   Provider: Postgres@1
+  Connection string: Host=localhost;port=5432;dbname=my_database;connect_timeout=10;User ID=my_user;Password=%SECRET_PASSWORD%;
+  Query: SELECT * FROM test_definitions
