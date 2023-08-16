@@ -36,5 +36,5 @@ Named sets:
 Output:
 - Format: xlsx
   Path: "LatestTestResults.xlsx"
-#- Format: json
-#  Path: ""Z:\\TestResults\\SmokeTests-{timestamp}.json""
+- Format: json
+  Path: ""Z:\\TestResults\\SmokeTests-{timestamp}.json""

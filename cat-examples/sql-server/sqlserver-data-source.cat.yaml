@@ -9,3 +9,8 @@ Tests:
   Data Source: DWH
   Query: SELECT * FROM MyTable
   Expectation: set is not empty
+
+Get list of tests from:
+- Provider: SqlServer@1
+  Connection string:  data source=localhost;integrated security=SSPI;initial catalog=DWH
+  Query: SELECT * FROM test_definitions

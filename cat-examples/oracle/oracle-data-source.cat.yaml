@@ -13,3 +13,13 @@ Tests:
   Data Source: MyOracleDatabase
   Query: SELECT * FROM MyTable
   Expectation: set is not empty
+
+Get list of tests from:
+- Provider: Oracle@1
+  Connection string: >
+      Data Source=(DESCRIPTION = (
+          ADDRESS = (PROTOCOL = TCP)(HOST = DATA1.DEMO.COM)(PORT = 1521)
+      ) 
+      (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = DWHDemo)));
+      User Id=User123;Password=%MyEnvironmentVariable%;Persist Security Info=True;
+  Query: SELECT * FROM test_definitions
